@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #87ceeb 0%, #4da6d6 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -29,7 +29,7 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            background: linear-gradient(135deg, #87ceeb 0%, #4da6d6 50%, #1e90ff 100%);
             animation: drift 20s infinite;
             z-index: -1;
         }
@@ -142,7 +142,7 @@
         .login-btn {
             width: 100%;
             padding: 12px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #4da6d6 0%, #1e90ff 100%);
             color: #fff;
             border: none;
             border-radius: 10px;
@@ -150,12 +150,12 @@
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 4px 15px rgba(77, 166, 214, 0.4);
         }
 
         .login-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+            box-shadow: 0 6px 20px rgba(77, 166, 214, 0.6);
         }
 
         .login-btn:active {
@@ -190,13 +190,60 @@
                 font-size: 24px;
             }
         }
+
+        .profile-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            object-fit: cover;
+            box-shadow: 0 4px 15px rgba(77, 166, 214, 0.3);
+        }
+
+        .side-image {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            opacity: 0.3;
+            object-fit: contain;
+        }
+
+        .side-image-left {
+            left: 20px;
+            top: 50px;
+        }
+
+        .side-image-right {
+            right: 20px;
+            bottom: 50px;
+        }
     </style>
 </head>
 <body>
     <div class="bg-blur"></div>
     
+    <!-- Decorative side images -->
+    <svg class="side-image side-image-left" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="100" cy="100" r="80" fill="rgba(255, 255, 255, 0.1)" stroke="rgba(255, 255, 255, 0.2)" stroke-width="2"/>
+        <circle cx="60" cy="60" r="30" fill="rgba(255, 255, 255, 0.15)"/>
+        <path d="M 100 40 Q 140 60 140 100" stroke="rgba(255, 255, 255, 0.2)" stroke-width="2" fill="none"/>
+    </svg>
+
+    <svg class="side-image side-image-right" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <rect x="20" y="20" width="160" height="160" fill="none" stroke="rgba(255, 255, 255, 0.2)" stroke-width="2" rx="20"/>
+        <circle cx="100" cy="80" r="25" fill="rgba(255, 255, 255, 0.15)"/>
+        <line x1="60" y1="130" x2="140" y2="130" stroke="rgba(255, 255, 255, 0.2)" stroke-width="2"/>
+    </svg>
+    
     <div class="glass-card">
         <div class="logo">
+            <!-- Profile picture placeholder -->
+            <svg class="profile-img" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="40" cy="40" r="40" fill="rgba(77, 166, 214, 0.3)" stroke="rgba(255, 255, 255, 0.3)" stroke-width="2"/>
+                <circle cx="40" cy="30" r="12" fill="rgba(255, 255, 255, 0.6)"/>
+                <path d="M 20 55 Q 40 45 60 55" fill="rgba(255, 255, 255, 0.5)"/>
+            </svg>
             <h1>Welcome Back</h1>
             <p>Sign in to your account</p>
         </div>
