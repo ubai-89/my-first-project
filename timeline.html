@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeline Proyek</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(180deg, #eff7ff 0%, #ffffff 100%);
+            color: #102a43;
+            padding: 24px;
+        }
+
+        .page-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 32px;
+        }
+
+        header p {
+            margin-top: 12px;
+            color: #486581;
+            line-height: 1.7;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.92);
+            border: 1px solid rgba(16, 42, 67, 0.08);
+            border-radius: 24px;
+            box-shadow: 0 22px 60px rgba(16, 42, 67, 0.08);
+            padding: 32px;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 32px;
+            margin-top: 24px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 18px;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #3c9cfc 0%, #60b5ff 100%);
+            border-radius: 999px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 36px;
+            padding: 18px 24px 18px 48px;
+            background: #f8fbff;
+            border: 1px solid rgba(60, 156, 252, 0.16);
+            border-radius: 18px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 22px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #ffffff;
+            border: 4px solid #3c9cfc;
+            box-shadow: 0 0 0 4px rgba(60, 156, 252, 0.12);
+        }
+
+        .timeline-item h3 {
+            font-size: 20px;
+            margin-bottom: 6px;
+            color: #0f2a45;
+        }
+
+        .timeline-item .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 16px;
+            color: #486581;
+            font-size: 14px;
+        }
+
+        .badge {
+            padding: 6px 12px;
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #fff;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .badge.complete { background: #2f855a; }
+        .badge.progress { background: #0b76d1; }
+        .badge.pending { background: #d69e2e; }
+
+        .timeline-item p {
+            line-height: 1.8;
+            color: #334e68;
+        }
+
+        .timeline-summary {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+            margin-top: 32px;
+        }
+
+        .summary-card {
+            background: white;
+            border-radius: 18px;
+            border: 1px solid rgba(16, 42, 67, 0.08);
+            padding: 18px;
+            box-shadow: 0 16px 40px rgba(16, 42, 67, 0.06);
+        }
+
+        .summary-card h4 {
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #0b2545;
+        }
+
+        .summary-card strong {
+            display: block;
+            font-size: 28px;
+            color: #0b2545;
+        }
+
+        @media (max-width: 900px) {
+            .timeline {
+                padding-left: 22px;
+            }
+
+            .timeline::before {
+                left: 11px;
+            }
+
+            .timeline-item {
+                padding-left: 42px;
+            }
+        }
+
+        @media (max-width: 720px) {
+            body {
+                padding: 16px;
+            }
+
+            .timeline-summary {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <header>
+            <h1>Timeline Proyek</h1>
+            <p>Ikuti kemajuan proyek dengan daftar acara dan milestone utama. Halaman ini menampilkan status perkembangan sesuai kebutuhan issue.</p>
+        </header>
+
+        <div class="card">
+            <div class="timeline">
+                <article class="timeline-item">
+                    <div class="meta">
+                        <span>15 April 2026</span>
+                        <span class="badge complete">Selesai</span>
+                    </div>
+                    <h3>Peluncuran Halaman Timeline</h3>
+                    <p>Desain halaman timeline dibuat dan disesuaikan dengan daftar fitur yang diperlukan, termasuk tampilan waktu, status, dan ringkasan milestone.</p>
+                </article>
+
+                <article class="timeline-item">
+                    <div class="meta">
+                        <span>12 April 2026</span>
+                        <span class="badge progress">Dalam Proses</span>
+                    </div>
+                    <h3>Uji Responsif dan Penyempurnaan</h3>
+                    <p>Menguji tampilan pada desktop dan perangkat mobile, memastikan komponen timeline tetap rapi dan mudah dibaca di semua ukuran layar.</p>
+                </article>
+
+                <article class="timeline-item">
+                    <div class="meta">
+                        <span>8 April 2026</span>
+                        <span class="badge complete">Selesai</span>
+                    </div>
+                    <h3>Penambahan Daftar Acara</h3>
+                    <p>Menambahkan entri milestone yang menggambarkan langkah penting seperti desain, pengembangan, dan persiapan peluncuran.</p>
+                </article>
+
+                <article class="timeline-item">
+                    <div class="meta">
+                        <span>5 April 2026</span>
+                        <span class="badge pending">Menunggu</span>
+                    </div>
+                    <h3>Pembuatan Struktur Halaman</h3>
+                    <p>Membuat struktur HTML dasar untuk timeline, dengan komponen kartu dan garis waktu vertikal untuk memperjelas urutan kerja.</p>
+                </article>
+
+                <article class="timeline-item">
+                    <div class="meta">
+                        <span>1 April 2026</span>
+                        <span class="badge complete">Selesai</span>
+                    </div>
+                    <h3>Persiapan dan Perencanaan</h3>
+                    <p>Menentukan daftar elemen yang diperlukan untuk issue: tanggal, judul kegiatan, deskripsi, dan status tiap milestone.</p>
+                </article>
+            </div>
+
+            <div class="timeline-summary">
+                <div class="summary-card">
+                    <h4>Total Milestone</h4>
+                    <strong>5</strong>
+                </div>
+                <div class="summary-card">
+                    <h4>Status Selesai</h4>
+                    <strong>3</strong>
+                </div>
+                <div class="summary-card">
+                    <h4>Status Menunggu</h4>
+                    <strong>1</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
